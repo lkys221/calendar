@@ -1,0 +1,27 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <span><button (click)="gotoPreviousMonth()"> < </button></span>
+  <span><h2>{{nameOfMonths[thisMonth]}} {{thisYear}}</h2></span>
+  <span><button (click)="gotoNextMonth()"> > </button></span>
+</div>
+
+
+
+<div>
+  <mat-grid-list cols="7" rowHeight="40px">
+    <mat-grid-tile *ngFor="let day of nameOfDays"> {{day}} </mat-grid-tile>
+  </mat-grid-list>
+
+  <mat-grid-list cols="7" rows="6" rowHeight="80px">
+    <div *ngFor="let num of createArray(boxes)">
+      <div *ngIf="thisYear == today.getFullYear() && thisMonth == today.getMonth() && num == today.getDate(); else loading">
+        <mat-grid-tile class="selected">{{num}}</mat-grid-tile>
+      </div>
+      <ng-template class="days" #loading>
+        <mat-grid-tile class="days">{{num}}</mat-grid-tile></ng-template>
+
+    </div>
+  </mat-grid-list>
+</div>
+
+

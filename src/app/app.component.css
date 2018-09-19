@@ -1,0 +1,16 @@
+.days {
+  background:lightgrey;
+}
+.days:hover {
+  background:darkgray;
+}
+
+h2 {
+  margin: 20px;
+  display: inline-block;
+}
+
+.selected {
+  background: lightblue;
+}
+
